@@ -16,6 +16,8 @@ def bfs(graph, start, goal):
             if neighbor not in visited:
                 visited.add(neighbor)
                 queue.append(neighbor)
+                if neighbor not in parent:
+                    parent[neighbor] = vertex
     return None
 
 
