@@ -16,6 +16,7 @@ def dfs(graph, start, goal):
             if neighbor not in visited:
                 visited.add(neighbor)
                 stack.append(neighbor)
-                parent[neighbor] = vertex
+                if neighbor not in parent:
+                    parent[neighbor] = vertex
 
     return None
