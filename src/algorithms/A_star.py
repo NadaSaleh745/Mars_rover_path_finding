@@ -8,7 +8,15 @@ def diagonal_heuristic(a, b):
     D2 = math.sqrt(2)
     return D * (dx + dy) + (D2 - 2 * D) * min(dx, dy)
 
-def A_star(graph, start, goal):
+def energy_aware_heuristic(a, b, terrain_map, elevation_map, terrain_cost):
+    base_dist = diagonal_heuristic(a, b)
+
+    terrain_factor = min(terrain_cost.values())
+    elevation_penalty = abs(elevation_map[a] - elevation_map[b])
+
+    return base_dist * terrain_factor + 0.1 * elevation_penalty
+
+def A_star(graph, start, goal, terrain_map, elevation_map, terrain_cost):
     heap = []
     heapq.heappush(heap, (0, start))
     parent = {start: None}
@@ -29,7 +37,7 @@ def A_star(graph, start, goal):
             if neighbor not in g_cost or new_g < g_cost[neighbor]:
                 g_cost[neighbor] = new_g
                 parent[neighbor] = vertex
-                f = new_g + diagonal_heuristic(neighbor, goal)
+                f = new_g + energy_aware_heuristic(neighbor, goal, terrain_map, elevation_map, terrain_cost)
                 heapq.heappush(heap, (f, neighbor))
 
     return None, float('inf')
