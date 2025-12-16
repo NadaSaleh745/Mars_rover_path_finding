@@ -104,7 +104,6 @@ The graph is implemented using **NetworkX**.
   - Terrain-weighted distance
   - Elevation-aware heuristics
 - **Hill Climbing**
-- **Genetic Algorithm**
 
 ---
 
