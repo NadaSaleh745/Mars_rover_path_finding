@@ -18,7 +18,7 @@ def energy_aware_heuristic(a, b, terrain_map, elevation_map, terrain_cost):
 
     return base_dist * terrain_factor + 0.1 * elevation_penalty
 
-def hillclimbing(graph, start, goal, terrain_map, elevation_map, terrain_cost):
+def hill_climbing(graph, start, goal, terrain_map, elevation_map, terrain_cost):
     current = start
     path = [start]
 
