@@ -122,6 +122,6 @@ The simulation compares algorithms based on:
 
 *General findings:*
 - **UCS** provides optimality but has to explore more nodes.
--  <b>A* </b> offers the best balance between speed and optimality.
+-  <b>A*</b> offers the best balance between speed and optimality.
 - **BFS** is optimal for distance but dangerous for high-cost terrain.
 - **Hill Climbing** is the fastest but often fails in complex mazes or cliffs.
