@@ -53,7 +53,11 @@ The simulation operates on an $N \times M$ grid where every cell $(x, y)$ has:
 | **Cliff** | Dark Slate Grey | $\infty$ | Impassable obstacle. |
 
 **Movement Cost Formula:**
-$$ \text{Cost} = \text{Distance} \times \text{TerrainFactor} \times (1 + \text{Slope}) $$
+
+$$
+Cost = Distance \times TerrainFactor \times (1 + Slope)
+$$
+
 
 ---
 
