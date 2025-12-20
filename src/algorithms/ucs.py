@@ -5,15 +5,21 @@ def ucs(graph, start, goal):
     heapq.heappush(heap, (0, start))
     parent = {start: None}
     cost_so_far = {start: 0}
+    explored_count = 0
+    visited = set()
 
     while heap:
         current_cost, vertex = heapq.heappop(heap)
+        explored_count += 1
+        if vertex in visited: continue
+        visited.add(vertex)
+
         if vertex == goal:
             path = []
             while vertex is not None:
                 path.append(vertex)
                 vertex = parent[vertex]
-            return path[::-1], current_cost
+            return path[::-1], current_cost, explored_count, cost_so_far, visited
 
         for neighbor in graph[vertex]:
             vertex_cost = graph[vertex][neighbor]['weight']
@@ -23,6 +29,6 @@ def ucs(graph, start, goal):
                 parent[neighbor] = vertex
                 heapq.heappush(heap, (new_cost, neighbor))
 
-    return None, float('inf')
+    return None, float('inf'), explored_count, cost_so_far, visited
 
 
