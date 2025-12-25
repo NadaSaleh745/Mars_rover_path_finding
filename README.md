@@ -26,6 +26,38 @@ Autonomous navigation is critical for planetary rovers where real-time human con
 The goal is to navigate a rover from a landing site to a scientific target using a weighted graph representation of the terrain.
 
 ---
+## Project Structure
+```
+Mars_rover_path_finding/
+├── Proposal/
+│   └── Project_Proposal.md
+├── results/
+│   ├── Astar_rover.mp4
+│   ├── bfs_rover.mp4
+│   ├── dfs_rover.mp4
+│   ├── hill_climbing_rover.mp4
+│   ├── hill_climbing_rover2.mp4
+│   ├── ids_path_max_20_rover.mp4
+│   ├── ids_path_max_100_rover.mp4
+│   ├── results.ipynb
+│   ├── search_algorithm_results.csv
+│   └── ucs_rover.mp4
+└── src/
+    ├── algorithms/
+    │   ├── __init__.py
+    │   ├── A_star.py
+    │   ├── bfs.py
+    │   ├── dfs.py
+    │   ├── hill_climbing.py
+    │   ├── ids.py
+    │   └── ucs.py
+    └── problem/
+       ├── __init__.py
+       └── simulation.ipynb
+
+```
+
+---
 
 ##  Features
 
